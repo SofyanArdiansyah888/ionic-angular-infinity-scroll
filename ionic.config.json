@@ -1,0 +1,7 @@
+{
+  "name": "ionic_wahyu",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

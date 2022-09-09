@@ -1,0 +1,28 @@
+
+<ion-searchbar
+        [(ngModel)]="searchTerm"
+        (keyup.enter)="setFilteredItems()"
+></ion-searchbar>
+<div *ngIf="searching" class="spinner-container" align="center">
+  <ion-spinner></ion-spinner>
+</div>
+
+<ion-content >
+
+  <ion-list *ngIf="!searching">
+    <ion-item *ngFor="let item of spareparts" (click)="toDetail(item)">
+      <div>
+          <p class="title">{{item.MATERIAL_NO}}</p>
+          <p class="description">{{item.DESCRIPTION}}</p>
+      </div>
+      <p  class="car" style="left: 0px;">Rp.{{item.PRICE}}</p>
+        <p slot="end" class="car">{{item.MODEL}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
