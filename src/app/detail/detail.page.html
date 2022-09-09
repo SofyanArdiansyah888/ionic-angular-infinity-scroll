@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="toBack()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sparepart Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><strong>{{item.MATERIAL_NO}}</strong></ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <strong>Description : <p>{{item.DESCRIPTION}}</p></strong>
+      <strong>Material Group : <p>{{item.MATERIAL_GROUP}}</p></strong>
+      <strong>Model :<p>{{item.MODEL}}</p></strong>
+      <strong>Quantity :<p>{{item.QUANTITY}}</p></strong>
+      <strong>Price : <p>{{item.PRICE}}</p></strong>
+      <strong>Valid On :<p>{{item.VALID_ON}}</p></strong>
+      <strong>NI : <p>{{item.NI}}</p></strong>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
